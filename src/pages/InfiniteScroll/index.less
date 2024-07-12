@@ -1,0 +1,23 @@
+.virtual-list {
+  position: relative;
+  overflow: auto;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.08);
+  &:hover {
+    will-change: transform;
+  }
+  
+  .view-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .view-item {
+      display: flex;
+      align-items: center;
+      height: 66px;
+      border-bottom: 1px solid #eee;
+      padding-left: 10px;
+    }
+  }
+}
