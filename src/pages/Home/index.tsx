@@ -2,7 +2,7 @@
  * @Author: shiyuan
  * @Date: 2024-07-26 09:48:49
  * @LastEditors: shiyuan
- * @LastEditTime: 2024-07-26 09:53:47
+ * @LastEditTime: 2024-08-06 15:27:34
  * @Description: 
  */
 import { history } from 'umi';
@@ -17,6 +17,9 @@ const Home = () => {
         </List.Item>
         <List.Item prefix={<GlobalOutline />} onClick={() => history.push('/scroll')}>
             InfiniteScroll
+        </List.Item>
+        <List.Item prefix={<GlobalOutline />} onClick={() => history.push('/editor')}>
+            Editor
         </List.Item>
     </List>
    )

@@ -9,8 +9,11 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "antd": "4.23.0",
     "antd-mobile": "^5.37.1",
     "antd-mobile-icons": "^0.3.0",
+    "ckeditor4": "4.22.1",
+    "ckeditor4-react": "4.3.0",
     "classnames": "^2.5.1",
     "compression-webpack-plugin": "^11.1.0",
     "css-minimizer-webpack-plugin": "^7.0.0",
