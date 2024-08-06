@@ -17,6 +17,7 @@ export default defineConfig({
     { path: "/", component: '@/pages/Home' },
     { path: "/code", component: '@/pages/VerifyCode' },
     { path: "/scroll", component: '@/pages/InfiniteScroll' },
+    { path: "/editor", component: '@/pages/Editor' },
   ],
   npmClient: 'yarn',
   extraPostCSSPlugins: [px2viewport({ viewportWidth: 375 })],
