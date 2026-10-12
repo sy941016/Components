@@ -39,18 +39,20 @@ const Scroll = ({ height = 66 }) => {
   }, []);
 
   return (
-    <div
-      className="virtual-list"
-      style={{ height: CONTAINER_HEIGHT }}
-      onScroll={handleScroll}
-      ref={virtualList}
-    >
-      <div className="view-content" style={{ transform: transform }}>
-        {data.map(({ name, rank }, index) => (
-          <div className="view-item" key={index}>
-            {name + rank}
-          </div>
-        ))}
+    <div className="example-page">
+      <div
+        className="virtual-list"
+        style={{ height: CONTAINER_HEIGHT }}
+        onScroll={handleScroll}
+        ref={virtualList}
+      >
+        <div className="view-content" style={{ transform: transform }}>
+          {data.map(({ name, rank }, index) => (
+            <div className="view-item" key={index}>
+              {name + rank}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

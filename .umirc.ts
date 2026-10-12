@@ -7,7 +7,6 @@
  */
 import { defineConfig } from "umi";
 import theme from './config/theme.config';
-import px2viewport from 'postcss-px-to-viewport';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
@@ -15,12 +14,14 @@ import CompressionPlugin from 'compression-webpack-plugin';
 export default defineConfig({
   routes: [
     { path: "/", component: '@/pages/Home' },
-    { path: "/code", component: '@/pages/VerifyCode' },
-    { path: "/scroll", component: '@/pages/InfiniteScroll' },
-    { path: "/editor", component: '@/pages/Editor' },
+    { path: "/components/calendar", component: '@/pages/components/Calendar' },
+    { path: "/components/counter", component: '@/pages/components/Counter' },
+    { path: "/components/editor", component: '@/pages/components/Editor' },
+    { path: "/components/virtualized-scroll", component: '@/pages/components/VirtualizedScroll' },
+    { path: "/examples/verify-code", component: '@/pages/VerifyCode' },
+    { path: "/examples/infinite-scroll", component: '@/pages/InfiniteScroll' },
   ],
   npmClient: 'yarn',
-  extraPostCSSPlugins: [px2viewport({ viewportWidth: 375 })],
   theme: theme(),
   chainWebpack(config) {
     config.merge({
@@ -45,6 +46,7 @@ export default defineConfig({
         rules: [
           {
             test: /\.css$/i,
+            exclude: /node_modules/,
             use: [MiniCssExtractPlugin.loader, "css-loader"],
           },
         ],

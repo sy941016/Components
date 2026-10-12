@@ -10,7 +10,7 @@ import './index.less';
 dayjs.extend(isoWeek);
 dayjs.extend(isBetween);
 
-interface Props {
+export interface CalendarProps {
   handelClickDay: (date: any) => void;
   initValue: string;
   minDate?: string;
@@ -27,7 +27,7 @@ const TimeUnit: Record<string, ManipulateType> = {
   DAY: 'day',
 };
 
-const MonthView = (props: Props) => {
+const MonthView = (props: CalendarProps) => {
   const currentTime = dayjs().format('YYYY-MM-DD');
   const {
     handelClickDay,

@@ -22,6 +22,8 @@ const VerifyCode = () => {
   const attemptLogin = async (codes: any) => {
     try {
       setLoading(true);
+      // 模拟登录请求，1s 后恢复
+      setTimeout(() => setLoading(false), 1000);
     } catch {
       setLoading(false);
     }
@@ -58,7 +60,8 @@ const VerifyCode = () => {
   };
 
   return (
-    <div className="verifyCode">
+    <div className="example-page">
+      <div className="verifyCode">
       <div className="title">输入验证码</div>
       <div className="subTitle">已发送4位验证码至 xxx</div>
       <div className="codes">
@@ -93,6 +96,7 @@ const VerifyCode = () => {
           重新获取 {renderCounter()}
         </div>
       )}
+      </div>
     </div>
   );
 };
